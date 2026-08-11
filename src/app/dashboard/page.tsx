@@ -28,10 +28,13 @@ export default async function DashboardPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-neutral-950">
       <header className="border-b bg-white dark:bg-neutral-900 dark:border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-              Modulajarpro <span className="text-sm font-normal text-indigo-500">by Aldirb354</span>
+          <div className="flex flex-col">
+            <h1 className="text-xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+              Modulajarpro
             </h1>
+            <span className="text-[10px] font-bold tracking-widest uppercase bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 -mt-1">
+              by Aldirb354
+            </span>
           </div>
 
           <form action={logoutAction}>

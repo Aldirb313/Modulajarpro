@@ -9,9 +9,12 @@ export default function Home() {
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-indigo-500/25">
             M
           </div>
-          <div>
-            <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">
-              Modulajarpro<span className="text-indigo-400"> by Aldirb354</span>
+          <div className="flex flex-col">
+            <span className="font-extrabold text-xl sm:text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-300">
+              Modulajarpro
+            </span>
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-widest uppercase bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 -mt-1">
+              by Aldirb354
             </span>
           </div>
         </div>
