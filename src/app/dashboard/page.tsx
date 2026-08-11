@@ -37,23 +37,35 @@ export default async function DashboardPage() {
             </span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <Link
               href="/copilot"
-              className="px-3.5 py-2 rounded-lg bg-indigo-600/10 border border-indigo-500/30 text-indigo-400 font-bold text-xs hover:bg-indigo-600 hover:text-white transition-all"
+              className="px-3 py-1.5 rounded-lg bg-indigo-600/10 border border-indigo-500/30 text-indigo-400 font-bold text-xs hover:bg-indigo-600 hover:text-white transition-all"
             >
-              🧠 Teacher Copilot AI
+              🧠 Copilot
             </Link>
             <Link
               href="/school"
-              className="px-3.5 py-2 rounded-lg bg-purple-600/10 border border-purple-500/30 text-purple-400 font-bold text-xs hover:bg-purple-600 hover:text-white transition-all"
+              className="px-3 py-1.5 rounded-lg bg-purple-600/10 border border-purple-500/30 text-purple-400 font-bold text-xs hover:bg-purple-600 hover:text-white transition-all"
             >
               🏫 School OS
+            </Link>
+            <Link
+              href="/pricing"
+              className="px-3 py-1.5 rounded-lg bg-emerald-600/10 border border-emerald-500/30 text-emerald-400 font-bold text-xs hover:bg-emerald-600 hover:text-white transition-all"
+            >
+              💎 Paket Subscription
+            </Link>
+            <Link
+              href="/marketplace"
+              className="px-3 py-1.5 rounded-lg bg-pink-600/10 border border-pink-500/30 text-pink-400 font-bold text-xs hover:bg-pink-600 hover:text-white transition-all"
+            >
+              🏪 Marketplace & XP
             </Link>
             <form action={logoutAction}>
               <button
                 type="submit"
-                className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+                className="rounded-lg bg-gray-900 px-3.5 py-1.5 text-xs font-semibold text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
               >
                 Logout
               </button>
