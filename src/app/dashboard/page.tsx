@@ -37,14 +37,28 @@ export default async function DashboardPage() {
             </span>
           </div>
 
-          <form action={logoutAction}>
-            <button
-              type="submit"
-              className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+          <div className="flex items-center gap-4">
+            <Link
+              href="/copilot"
+              className="px-3.5 py-2 rounded-lg bg-indigo-600/10 border border-indigo-500/30 text-indigo-400 font-bold text-xs hover:bg-indigo-600 hover:text-white transition-all"
             >
-              Logout
-            </button>
-          </form>
+              🧠 Teacher Copilot AI
+            </Link>
+            <Link
+              href="/school"
+              className="px-3.5 py-2 rounded-lg bg-purple-600/10 border border-purple-500/30 text-purple-400 font-bold text-xs hover:bg-purple-600 hover:text-white transition-all"
+            >
+              🏫 School OS
+            </Link>
+            <form action={logoutAction}>
+              <button
+                type="submit"
+                className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+              >
+                Logout
+              </button>
+            </form>
+          </div>
         </div>
       </header>
 
