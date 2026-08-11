@@ -11,10 +11,7 @@ export default function Home() {
           </div>
           <div>
             <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">
-              ModulAjar<span className="text-indigo-400">Pro</span>
-            </span>
-            <span className="hidden sm:inline-block ml-2 px-2 py-0.5 text-[10px] font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full">
-              GuruAI OS v1.0
+              Modulajarpro<span className="text-indigo-400"> by Aldirb354</span>
             </span>
           </div>
         </div>
@@ -118,7 +115,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 px-6 lg:px-12 py-8 text-center text-xs text-slate-500 bg-slate-950">
-        <p>© 2026 Modul Ajar Pro (GuruAI OS). Hak Cipta Dilindungi Undang-Undang.</p>
+        <p>© 2026 Modulajarpro by Aldirb354. Hak Cipta Dilindungi Undang-Undang.</p>
       </footer>
     </div>
   );
