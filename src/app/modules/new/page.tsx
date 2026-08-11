@@ -13,282 +13,290 @@ export default function NewModulePage() {
   )
 
   return (
-    <main className="min-h-screen bg-gray-50 dark:bg-neutral-950">
-      <header className="border-b bg-white dark:bg-neutral-900 dark:border-neutral-800">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-            Modul Ajar Pro
-          </h1>
-
-          <Link
-            href="/dashboard"
-            className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-          >
-            Kembali ke Dashboard
-          </Link>
+    <main className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+      {/* Top Navbar */}
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80 px-6 lg:px-12 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-indigo-500/25">
+            M
+          </div>
+          <div className="flex flex-col">
+            <span className="font-extrabold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">
+              Modulajarpro
+            </span>
+            <span className="text-[10px] font-bold tracking-widest uppercase bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 -mt-1">
+              by Aldirb354
+            </span>
+          </div>
         </div>
+
+        <Link
+          href="/dashboard"
+          className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2"
+        >
+          <span>← Kembali ke Dashboard</span>
+        </Link>
       </header>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
-        <div className="bg-white dark:bg-neutral-900 rounded-xl shadow-md border border-gray-100 dark:border-neutral-800 p-6 sm:p-8">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Buat Modul Ajar
-            </h2>
+      {/* Main Container */}
+      <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 py-10 flex-1">
+        <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl relative overflow-hidden">
+          {/* Top Decorative Glow */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
 
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-              Isi informasi dasar dan materi pembelajaran.
+          {/* Header Title */}
+          <div className="mb-8 border-b border-slate-800/80 pb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/80 border border-indigo-800/80 text-[11px] text-indigo-300 mb-3">
+              <span>⚡ Form Generator AI Perangkat Pembelajaran</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Buat Modul Ajar <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400">Kurikulum Merdeka</span>
+            </h2>
+            <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Isi informasi dasar materi pembelajaran di bawah ini. AI Engine akan memproses dan menyusun Modul Ajar secara otomatis.
             </p>
           </div>
 
           {state.error && (
-            <div className="mb-6 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-              {state.error}
+            <div className="mb-6 rounded-2xl border border-rose-900/60 bg-rose-950/40 p-4 text-xs font-semibold text-rose-300">
+              ⚠️ {state.error}
             </div>
           )}
 
           <form action={formAction} className="space-y-8">
-            <section>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Informasi Dasar
+            {/* Section 1: Informasi Dasar */}
+            <section className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6">
+              <h3 className="text-base font-bold text-indigo-400 mb-4 flex items-center gap-2">
+                <span>📌 Informasi Dasar & Identitas</span>
               </h3>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="sm:col-span-2">
                   <label
                     htmlFor="title"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Judul Modul
+                    Judul Modul Ajar <span className="text-rose-400">*</span>
                   </label>
-
                   <input
                     id="title"
                     name="title"
                     type="text"
                     required
-                    placeholder="Contoh: Sistem Pernapasan Manusia"
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    placeholder="Contoh: Modul Ajar Biologi - Sistem Pernapasan Manusia"
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Mata Pelajaran
+                    Mata Pelajaran <span className="text-rose-400">*</span>
                   </label>
-
                   <input
                     id="subject"
                     name="subject"
                     type="text"
                     required
-                    placeholder="Contoh: IPA"
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    placeholder="Contoh: IPA / Biologi"
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="grade"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Kelas
+                    Kelas <span className="text-rose-400">*</span>
                   </label>
-
                   <select
                     id="grade"
                     name="grade"
                     required
                     defaultValue=""
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                   >
                     <option value="" disabled>
-                      Pilih kelas
+                      Pilih Tingkat Kelas
                     </option>
-                    <option value="1">Kelas 1</option>
-                    <option value="2">Kelas 2</option>
-                    <option value="3">Kelas 3</option>
-                    <option value="4">Kelas 4</option>
-                    <option value="5">Kelas 5</option>
-                    <option value="6">Kelas 6</option>
-                    <option value="7">Kelas 7</option>
-                    <option value="8">Kelas 8</option>
-                    <option value="9">Kelas 9</option>
-                    <option value="10">Kelas 10</option>
-                    <option value="11">Kelas 11</option>
-                    <option value="12">Kelas 12</option>
+                    <option value="1">Kelas 1 SD</option>
+                    <option value="2">Kelas 2 SD</option>
+                    <option value="3">Kelas 3 SD</option>
+                    <option value="4">Kelas 4 SD</option>
+                    <option value="5">Kelas 5 SD</option>
+                    <option value="6">Kelas 6 SD</option>
+                    <option value="7">Kelas 7 SMP</option>
+                    <option value="8">Kelas 8 SMP</option>
+                    <option value="9">Kelas 9 SMP</option>
+                    <option value="10">Kelas 10 SMA/SMK</option>
+                    <option value="11">Kelas 11 SMA/SMK</option>
+                    <option value="12">Kelas 12 SMA/SMK</option>
                   </select>
                 </div>
 
                 <div>
                   <label
                     htmlFor="phase"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Fase
+                    Fase Kurikulum <span className="text-rose-400">*</span>
                   </label>
-
                   <select
                     id="phase"
                     name="phase"
                     required
                     defaultValue=""
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                   >
                     <option value="" disabled>
-                      Pilih fase
+                      Pilih Fase
                     </option>
-                    <option value="A">Fase A</option>
-                    <option value="B">Fase B</option>
-                    <option value="C">Fase C</option>
-                    <option value="D">Fase D</option>
-                    <option value="E">Fase E</option>
-                    <option value="F">Fase F</option>
+                    <option value="A">Fase A (Kelas 1-2 SD)</option>
+                    <option value="B">Fase B (Kelas 3-4 SD)</option>
+                    <option value="C">Fase C (Kelas 5-6 SD)</option>
+                    <option value="D">Fase D (Kelas 7-9 SMP)</option>
+                    <option value="E">Fase E (Kelas 10 SMA)</option>
+                    <option value="F">Fase F (Kelas 11-12 SMA)</option>
                   </select>
                 </div>
 
                 <div>
                   <label
                     htmlFor="semester"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Semester
+                    Semester <span className="text-rose-400">*</span>
                   </label>
-
                   <select
                     id="semester"
                     name="semester"
                     required
                     defaultValue=""
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 px-4 py-3 text-sm text-white outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                   >
                     <option value="" disabled>
-                      Pilih semester
+                      Pilih Semester
                     </option>
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
+                    <option value="1">Semester 1 (Ganjil)</option>
+                    <option value="2">Semester 2 (Genap)</option>
                   </select>
                 </div>
               </div>
             </section>
 
-            <section>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Isi Pembelajaran
+            {/* Section 2: Isi Pembelajaran */}
+            <section className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6">
+              <h3 className="text-base font-bold text-purple-400 mb-4 flex items-center gap-2">
+                <span>📑 Isi Materi & Aktivitas Pembelajaran</span>
               </h3>
 
               <div className="space-y-5">
                 <div>
                   <label
                     htmlFor="learningObjectives"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Tujuan Pembelajaran
+                    Tujuan Pembelajaran (TP)
                   </label>
-
                   <textarea
                     id="learningObjectives"
                     name="learningObjectives"
-                    rows={4}
-                    placeholder="Tuliskan tujuan pembelajaran..."
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    rows={3}
+                    placeholder="Tuliskan tujuan pembelajaran yang ingin dicapai..."
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm text-white placeholder-slate-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="materials"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Materi Pembelajaran
+                    Materi / Uraian Bahan Ajar
                   </label>
-
                   <textarea
                     id="materials"
                     name="materials"
-                    rows={4}
-                    placeholder="Tuliskan materi pembelajaran..."
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    rows={3}
+                    placeholder="Ringkasan materi atau poin-poin utama bab..."
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm text-white placeholder-slate-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="introduction"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Kegiatan Pendahuluan
+                    Kegiatan Pendahuluan (Apersepsi & Warm-up)
                   </label>
-
                   <textarea
                     id="introduction"
                     name="introduction"
-                    rows={4}
-                    placeholder="Tuliskan kegiatan pendahuluan..."
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    rows={3}
+                    placeholder="Aktivitas awal, pertanyaan pemantik, & ice breaking..."
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm text-white placeholder-slate-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="coreActivities"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Kegiatan Inti
+                    Kegiatan Inti (Differentiated Learning / PjBL)
                   </label>
-
                   <textarea
                     id="coreActivities"
                     name="coreActivities"
-                    rows={5}
-                    placeholder="Tuliskan kegiatan inti..."
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    rows={4}
+                    placeholder="Langkah-langkah kegiatan praktikum, diskusi kelompok, atau proyek..."
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm text-white placeholder-slate-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="closing"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Kegiatan Penutup
+                    Kegiatan Penutup & Refleksi
                   </label>
-
                   <textarea
                     id="closing"
                     name="closing"
-                    rows={4}
-                    placeholder="Tuliskan kegiatan penutup..."
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    rows={3}
+                    placeholder="Kesimpulan materi, refleksi murid, dan apresiasi kelas..."
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm text-white placeholder-slate-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="assessment"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2"
+                    className="block text-xs font-semibold text-slate-300 mb-2"
                   >
-                    Asesmen
+                    Bentuk Asesmen (Formatif & Sumatif)
                   </label>
-
                   <textarea
                     id="assessment"
                     name="assessment"
-                    rows={4}
-                    placeholder="Tuliskan bentuk asesmen..."
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none focus:border-blue-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white"
+                    rows={3}
+                    placeholder="Bentuk kuis, lembar kerja LKPD, rubrik penilaian..."
+                    className="w-full rounded-xl border border-slate-800 bg-slate-900 p-4 text-sm text-white placeholder-slate-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                   />
                 </div>
               </div>
             </section>
 
-            <div className="flex items-center justify-end gap-3 border-t border-gray-100 dark:border-neutral-800 pt-6">
+            {/* Bottom Actions */}
+            <div className="flex items-center justify-end gap-4 border-t border-slate-800/80 pt-6">
               <Link
                 href="/dashboard"
-                className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-neutral-700 dark:text-gray-200 dark:hover:bg-neutral-800"
+                className="px-6 py-3.5 rounded-xl border border-slate-800 bg-slate-950 font-bold text-xs text-slate-400 hover:text-white hover:bg-slate-900 transition-all"
               >
                 Batal
               </Link>
@@ -296,9 +304,9 @@ export default function NewModulePage() {
               <button
                 type="submit"
                 disabled={pending}
-                className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+                className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-95 font-extrabold text-xs text-white shadow-xl shadow-indigo-500/25 transition-all hover:scale-105 active:scale-95 disabled:opacity-60"
               >
-                {pending ? 'Menyimpan...' : 'Simpan Modul Ajar'}
+                {pending ? 'Menyusun Modul Ajar AI...' : '✨ Generate & Simpan Modul Ajar'}
               </button>
             </div>
           </form>
